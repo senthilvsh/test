@@ -1,0 +1,16 @@
+body {
+	width: 800px;
+	margin: 0 auto;
+	line-height: 1.5em;
+	color: #333;
+}
+
+pre {
+	padding: 10px;
+	background-color: #eee;
+}
+
+footer {
+	border-top: solid 1px #eee;
+	text-align: center;
+}

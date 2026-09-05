@@ -1,0 +1,64 @@
+##   C# / .NET Gitignore Template   ##
+
+#   Build Artifacts & Binaries
+###############################
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.msi
+*.msix
+*.msm
+*.msp
+
+#   User-Specific Files & IDE Settings
+###############################
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+#   Package Management & Dependencies
+###############################
+# NuGet Packages
+*.nuget.exe
+.nuget/
+packages/
+# Node.js (if using a web project or frontend assets)
+node_modules/
+
+#   OS Generated Files
+###############################
+.DS_Store
+Thumbs.db
+
+#   Testing & Code Coverage
+###############################
+TestResults/
+*.axaml.g.h
+*.coverage
+*.coveragexml
+
+#   Secrets & Environment Configuration
+###############################
+# Local app settings and secrets files
+appsettings.Development.json
+appsettings.Local.json
+*.usersecrets
+.env
+.env.*
+!.env.example

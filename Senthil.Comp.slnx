@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Senthil.Comp.Assembler/Senthil.Comp.Assembler.csproj" />
+  <Project Path="Senthil.Comp.Shared/Senthil.Comp.Shared.csproj" />
+</Solution>

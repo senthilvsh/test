@@ -1,48 +1,88 @@
 body {
-	max-width: 800px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 1em;
-	box-sizing: border-box;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	color: #222;
-	background-color: #fafafa;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #222;
+    background-color: #fafafa;
 }
 
 header {
-	border-bottom: solid 1px #aaa;
-	text-align: center;
-	padding-bottom: 1em;
+    border-bottom: solid 1px #bbb;
+    text-align: center;
+    padding-bottom: 1em;
 }
 
 header h1 {
-	margin: 0.25em;
+    margin: 0.25em;
+}
+
+ul.log-list {
+    list-style: none; /* Removes the default circular bullets */
+    padding-left: 0; /* Flushes the content with your regular paragraphs */
+    margin: 20px 0;
+}
+
+ul.log-list li {
+    margin-bottom: 12px; /* Adds breathing room between log links */
+    line-height: 1.5;
 }
 
 pre {
-	padding: 1rem;
-	background-color: #f0f0f0;
-	border-radius: 4px;
-	/* Uses sharp monospace system engines like Consolas, SF Mono, or Menlo */
-	font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-	font-size: 0.9rem;
-	overflow-x: auto;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
 }
 
-footer {
-	margin-top: 4rem;
-	padding-top: 1.5rem;
-	border-top: solid 1px #eee;
-	text-align: center;
-	font-size: 0.9rem;
-	color: #666;
+body > footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.post-nav ul {
+    list-style: none;
+    padding: 1em 0;
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px #bbb;
+    border-bottom: solid 1px #bbb;
+}
+
+.post-nav li {
+    flex: 1;
+}
+
+.post-nav li.nav-prev {
+    text-align: left;
+}
+
+.post-nav li.nav-home {
+    text-align: center;
+}
+
+.post-nav li.nav-next {
+    text-align: right;
 }
 
 .highlight {
-	border: solid 1px #ccc;
-	padding: 1em;
-	border-radius: 1em;
-	margin: 2em 0;
-	background-color: #f0f0f0;
+    border: solid 1px #bbb;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 2em 0;
+    background-color: #f0f0f0;
 }

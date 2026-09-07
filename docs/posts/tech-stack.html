@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Choosing the Tech Stack – C# & .NET 10 | Senthil.Comp</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="../index.html">&larr; Home</a>
+</nav>
+
+<article>
+
+    <header>
+        <h1>Choosing the Tech Stack – C# & .NET 10</h1>
+        <p><em>An honest evaluation of architectural trade-offs and selecting a modern runtime foundation.</em></p>
+    </header>
+
+    <p>
+        Before writing a single line of code, I had to pick the language to build the foundation.
+        Since this project spans a virtual machine, assembler, compiler, and an OS kernel, the scope is massive.
+        I needed a language that would let me focus entirely on systems logic without drowning in language quirks or
+        memory bugs.
+    </p>
+
+    <p>
+        Here is the honest, unfiltered breakdown of how I evaluated the options—and why C# emerged as the absolute
+        "best of all worlds" choice for me.
+    </p>
+
+    <section>
+        <h2>The Contenders</h2>
+        <ul>
+            <li>
+                <strong>Java (My Daily-Driver):</strong> This was the most obvious choice for familiarity,
+                but it has one fatal flaw for a systems project: <em>the lack of foundational unsigned types</em>.
+                When you are building a custom 32-bit VM from scratch, you are living in a world of unsigned integers,
+                bytes, and bitwise operations. Forcing Java's signed types to behave like unsigned types is a recipe
+                for endless mental math and bugs. Java was out.
+            </li>
+            <li>
+                <strong>C:</strong> The classic choice, but a dangerous one for a solo developer.
+                I am not an expert in C. If I chose it, I would spend 70% of my time manually managing memory,
+                chasing down segmentation faults, and debugging memory leaks. As the project scaled,
+                I knew I would likely make a complete mess of the codebase.
+            </li>
+            <li>
+                <strong>C++:</strong> It brings excellent automatic memory management utilities (smart pointers) and a
+                stellar standard library. However, the footguns remain—you can still easily pass around an
+                invalid pointer and crash the system. Like C, I just don't have the deep familiarity required to
+                shepherd a project of this scale in C++.
+            </li>
+            <li>
+                <strong>Rust:</strong> An incredible language for systems programming, but the learning curve is steep.
+                There is just too much to unlearn to get productive quickly.
+            </li>
+            <li>
+                <strong>Go:</strong> A black box to me. Completely unfamiliar.
+            </li>
+            <li>
+                <strong>Python:</strong> Fantastic for whipping up an assembler or compiler syntax tree in a
+                single weekend. However, when it comes to executing a tight, performance-sensitive VM instruction loop,
+                Python's runtime overhead makes it an impractical choice for simulating a snappy 32-bit architecture.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Why C# and .NET 10 is the "Best of All Worlds"</h2>
+        <p>
+            C# sits perfectly in the goldilocks zone for this project. It is the closest thing to a perfect compromise:
+        </p>
+        <ol>
+            <li>
+                <strong>First-Class Unsigned Support:</strong> Unlike Java, C# natively supports <code>uint</code>,
+                <code>ulong</code>, and <code>byte</code> straight out of the box. No bit-masking hacks required.
+            </li>
+            <li>
+                <strong>Automatic Memory Management:</strong> The garbage collector handles the boring stuff.
+                I can focus on building my compiler's Abstract Syntax Tree (AST) without worrying about manual
+                allocations.
+            </li>
+            <li>
+                <strong>Low-Level Escape Hatches:</strong> When the VM instruction loop needs raw speed,
+                C# allows native memory access, pointers, and <code>unsafe</code> blocks. I get high-level productivity
+                with low-level power when it counts.
+            </li>
+            <li>
+                <strong>Ecosystem &amp; Performance:</strong> .NET 10 provides incredible first-party libraries,
+                seamless cross-platform execution, and the ability to compile down to native binaries via NativeAOT.
+            </li>
+            <li>
+                <strong>The Familiarity Factor:</strong> It is second only to Java for me. The syntax feels like home,
+                meaning I can hit the ground running on day one.
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <p>
+            In short, C# is my booster rocket. It’s the highly productive scaffold that will let me build the VM,
+            the assembler, and the compiler quickly. And if everything goes right, it's the very rocket I will
+            ultimately
+            jettison once my own self-hosting language is ready to take over.
+        </p>
+    </section>
+
+    <footer>
+        <nav class="post-nav">
+            <ul>
+                <li class="nav-prev">
+                </li>
+                <li class="nav-home">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="nav-next">
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+</article>
+
+<footer>
+    <p>Copyright &copy; 2026-present <a href="https://github.com/senthilvsh">Senthil Kumar</a></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/Senthil.Comp.Assembler/Senthil.Comp.Assembler.csproj" />
+  <Project Path="src/Senthil.Comp.Shared/Senthil.Comp.Shared.csproj" />
+  <Project Path="src/Senthil.Comp.VirtualMachine/Senthil.Comp.VirtualMachine.csproj" />
+</Solution>

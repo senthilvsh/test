@@ -2,7 +2,7 @@
 
 public static class VirtualMachine
 {
-    static byte[] mem =
+    private static byte[] _mem =
     {
         0x01, // Load
         0x00, // R0
@@ -10,43 +10,53 @@ public static class VirtualMachine
         0x01, // Load
         0x01, // R1
         0x03, // 3
-        0x03, // Add
+        0x04, // Add
         0x00, // R0
         0x01, // R1
         0x00, // Halt
     };
 
+    private static byte[] _r = { 0, 0 };
+    private static byte _ip = 0;
+    private static bool _running = true;
+
     public static void Main()
     {
-        byte[] R = { 0, 0 };
-        byte IP = 0;
-        bool running = true;
-        while (running)
+        while (_running)
         {
-            byte instr = mem[IP];
+            var instr = _mem[_ip];
             switch (instr)
             {
-                case 0x00:
-                    IP++;
-                    running = false;
-                    break;
-                case 0x01:
-                    byte regId = mem[IP + 1];
-                    byte val = mem[IP + 2];
-                    R[regId] = val;
-                    IP += 3;
-                    break;
-                case 0x03:
-                    byte regId1 = mem[IP + 1];
-                    byte regId2 = mem[IP + 2];
-                    R[regId1] += R[regId2];
-                    IP += 3;
-                    break;
-                default: throw new Exception("Unknown Instruction");
+                case 0x00: Halt(); break;
+                case 0x01: Load(); break;
+                case 0x03: Add(); break;
+                default: throw new Exception("Unknown OPCODE at location: " + _ip);
             }
         }
 
-        Console.WriteLine(R[0]);
-        Console.WriteLine(R[1]);
+        Console.WriteLine(_r[0]);
+        Console.WriteLine(_r[1]);
+    }
+
+    private static void Halt()
+    {
+        _ip++;
+        _running = false;
+    }
+
+    private static void Load()
+    {
+        var regId = _mem[_ip + 1];
+        var val = _mem[_ip + 2];
+        _r[regId] = val;
+        _ip += 3;
+    }
+
+    private static void Add()
+    {
+        var regId1 = _mem[_ip + 1];
+        var regId2 = _mem[_ip + 2];
+        _r[regId1] += _r[regId2];
+        _ip += 3;
     }
 }

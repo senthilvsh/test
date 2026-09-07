@@ -16,10 +16,9 @@
 
 <h2>Introduction</h2>
 
-<p>
-    <strong>Senthil.Comp</strong> is an attempt to create a complete 32-bit computing platform from scratch,
-    purely in software. The core components of this project include:
-</p>
+<p><strong>Senthil.Comp</strong> is an attempt to create a complete 32-bit computing platform from scratch</p>
+
+<p>The core components of this project include:</p>
 
 <ul>
     <li>Instruction Set Architecture</li>
@@ -29,91 +28,41 @@
     <li>Operating System Kernel</li>
 </ul>
 
-<h2>But... Why?</h2>
+<h2>Inspiration</h2>
 
-<p>Why would anyone even want to attempt something like this? Don't I have something more important...
-    something more <em>feasible</em> to work on?</p>
-
-<figure>
-    <blockquote>
-        <p>"Some engineers take apart the world, and put it back together, just because... why not?
-            We may succeed completely or fail spectacularly. But that's where all the fun is."</p>
-    </blockquote>
-    <figcaption>&dash; <cite>Me, but maybe someone else too I think</cite></figcaption>
-</figure>
+<p>Why would anyone even want to attempt something like this? Don't I have something more important or commercially
+    viable to work on? For me, the answer splits into two equally compelling drives:</p>
 
 <h3>The Allure of the Bare Metal</h3>
 
-<p>I have always been fascinated by low-level programming. I started coding in Borland C++ on
-    DOS. In that era, there was no safety net. There was no abstraction layer, no virtualization, no
-    user-vs-kernel space, and absolutely no sandboxing. When your Borland C++ program executed, it
-    operated with the equivalent of "Kernel/Root" privileges over the entire machine.</p>
+<p>
+    There is a rare, pure engineering joy in taking apart the world and putting it back together just to see how it
+    ticks. Rebuilding a stack from scratch completely eliminates the legacy hardware baggage, commercial compromises,
+    and missing documentation found in real-world systems. It gives you absolute architectural freedom to answer the
+    ultimate question: <em>how deep does the software rabbit hole actually go?</em>
+</p>
 
-<p>It became even more fascinating when I tried assembly programming. I compiled code into a raw
-    binary blob, flashed it to a floppy disk, and booted directly from it just to print "Senthil" on
-    the screen.</p>
+<h3>A Sandbox for Pure Logic</h3>
 
-<p>Absolutely nothing else existed in the system - I had total control! There is something
-    incredibly neat about being able to control every single byte of data moving through a machine,
-    managing every aspect of the system directly.</p>
+<p>
+    Beyond the thrill, there is a deep fascination with core operating system concepts like task scheduling, memory
+    management, and file system topologies. I can cleanly visualize how a naive implementation <em>would</em> work in
+    my head.
+</p>
 
-<h3>The Problem with Modern Emulation</h3>
+<p>
+    But studying real-world kernels on modern x86/ARM hardware is incredibly hostile; you are instantly buried under
+    decades of legacy quirks, out-of-order execution workarounds, and hyper-complex security mitigations. By creating my
+    own custom virtual machine from scratch, I bypass the real-world noise entirely. I get a pristine, mathematically
+    sterile sandbox to isolate and play with pure system architecture logic.
+</p>
 
-<p>Today, if you want that type of programming environment, you have plenty of options. There are
-    excellent emulators for pretty much every machine or architecture imaginable.</p>
 
-<p>But there is a catch. Most real-world systems come with an immense amount of quirks and
-    historical baggage:</p>
+<p class="highlight"><em>This project is a <strong>pure passion project, educational tool, and engineering sandbox</strong>.
+    It has absolutely zero commercial ambitions, production utility, or real-world stability goals.
+    It is built strictly for the joy of solving hard problems and playing on the bare metal.</em></p>
 
-<ul>
-    <li><strong>Market Pressures:</strong> Some quirks exist because a company rushed to beat a
-        competitor to market.
-    </li>
-    <li><strong>Legacy Support:</strong> Others are there strictly for hardware limitations or
-        backward compatibility.
-    </li>
-    <li><strong>Missing Docs:</strong> Then there is the documentation - or lack thereof. Because
-        low-level programmers are a dying breed, the docs are rarely accessible or available in an
-        easily consumable format.
-    </li>
-</ul>
-
-<h3>The Insane Idea: Virtual Hardware</h3>
-
-<p>After years of trying repeatedly, I had the insane idea to build a complete computing stack
-    from scratch. I won't just have complete control over the software running on the system - I will
-    have total control over the hardware itself, because I am going to create it virtually.</p>
-
-<h3>Building the Software Ecosystem</h3>
-
-<p>But why stop at just a virtual machine and a custom assembly language? Why not keep building
-    layers upward to see exactly how far this rabbit hole goes?</p>
-
-<p>The vision is to expand this into a whole ecosystem:</p>
-
-<ul>
-    <li><strong>High-Level Language:</strong> A custom language to make programming elegant.</li>
-    <li><strong>Simple Runtime:</strong> I/O and memory management libraries to deploy
-        applications faster.
-    </li>
-    <li><strong>OS Kernel:</strong> A custom operating system kernel to abstract away the virtual
-        hardware.
-    </li>
-</ul>
-
-<p>Once I toss in a basic task scheduler, robust context switching, and true multi-tasking, a
-    blank screen will transform into a living, breathing ecosystem.</p>
-
-<h3>The Ultimate Goal: Self-Hosting</h3>
-
-<p>Ultimately, this will all lead to the holy grail of system design, the ultimate litmus test
-    for any custom architecture: self-hosting.</p>
-
-<p>The grand dream is to use Senthil.Comp to run its own assembler and compiler, building the
-    platform entirely within itself. It is a massive, incredibly ambitious mountain to climb - but hey,
-    I can dream big, can't I?</p>
-
-<h2>The Journey, Documented Step-by-Step</h2>
+<h2>The Journey</h2>
 
 <p>Building a complete computing stack from scratch is bound to be a wild, chaotic ride, and I
     plan to document every single mile of it. I will be capturing the entire journey step-by-step

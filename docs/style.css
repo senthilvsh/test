@@ -2,86 +2,22 @@ body {
 	max-width: 800px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 1rem 1rem 2rem 1rem;
-	/* Uses clean, crisp modern system fonts like Segoe UI, San Francisco, or Arial */
+	padding: 1em;
+	box-sizing: border-box;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-	line-height: 1.6;
+	line-height: 1.5;
 	color: #222;
 	background-color: #fafafa;
 }
 
 header {
-	padding-bottom: 0.5rem;       /* Halved the inside padding */
-	margin-bottom: 1.2rem;        /* Greatly reduced the gap below the header line */
-	border-bottom: solid 1px #eee;
+	border-bottom: solid 1px #aaa;
+	text-align: center;
+	padding-bottom: 1em;
 }
 
-/* Strip out the aggressive default browser margins on header text elements */
 header h1 {
-	margin: 0 0 0.2rem 0;         /* Tight margin only at the bottom of the title */
-	font-size: 2.2rem;            /* Keeps it readable but compact */
-	line-height: 1.1;
-}
-
-header p {
-	margin: 0;                    /* Removes the default paragraph spacing */
-	font-size: 1rem;
-}
-
-h2, h3 {
-	color: #111;
-	margin-top: 1.8rem;           /* Compressed from 2.5rem to save vertical space */
-	margin-bottom: 0.8rem;
-}
-
-
-/* Roadmap link list refinements */
-.roadmap-links ol {
-	padding-left: 1.2rem;
-}
-
-.roadmap-links li {
-	margin-bottom: 0.6rem;    /* Generates an explicit vertical separation for items */
-}
-
-a {
-	color: #0066cc;
-	text-decoration: none;
-	transition: color 0.2s ease-in-out;
-}
-
-a:hover {
-	color: #004499;
-	text-decoration: underline;
-}
-
-/* Reset default browser spacing rules for the blockquote container */
-figure {
-	margin: 1.5rem 0;
-	padding: 0;
-}
-
-/* Align the quote perfectly to the left and add an elegant border accent */
-blockquote {
-	margin: 0;
-	padding-left: 1.2rem;
-	border-left: 4px solid #333; /* A sharp accent bar on the left edge */
-}
-
-/* Style the text inside the quote */
-blockquote p {
-	margin: 0;
-	font-style: italic;
-	font-size: 1.15rem;
-	line-height: 1.6;
-}
-
-/* Align the author citation cleanly beneath the quote block */
-figcaption {
-	margin-top: 0.5rem;
-	padding-left: 1.2rem;     /* Perfectly aligns the name right beneath the text block */
-	font-size: 0.95rem;
-	color: #666;
+	margin: 0.25em;
 }
 
 pre {
@@ -101,4 +37,12 @@ footer {
 	text-align: center;
 	font-size: 0.9rem;
 	color: #666;
+}
+
+.highlight {
+	border: solid 1px #ccc;
+	padding: 1em;
+	border-radius: 1em;
+	margin: 2em 0;
+	background-color: #f0f0f0;
 }
